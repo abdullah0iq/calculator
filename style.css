@@ -54,6 +54,9 @@ button{
     border-radius: 17px;
     cursor: pointer;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .operationButton{
     background-color: rgb(75, 94, 252) ;
