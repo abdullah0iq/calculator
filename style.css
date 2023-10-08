@@ -33,12 +33,12 @@
   justify-content: space-evenly;
 }
 
-#result {
+#mainScreen {
   font-size: 80px;
   color: rgb(255, 255, 255);
   margin: 4%;
 }
-#inputs {
+#smallScreen {
   font-size: 40px;
   margin-right: 4%;
   color: grey;
@@ -59,7 +59,7 @@ button{
     align-items: center;
 }
 .operationButton{
-    background-color: rgb(75, 94, 252) ;
+    background-color: #5c257a;
 }
 .delete{
     background-image: url(delete.png);

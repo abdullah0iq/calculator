@@ -17,38 +17,45 @@
     "
   >
     <div id="calculator">
-      <div id="inputs">456 / 4</div>
-      <div id="result">114</div>
+      <div id="smallScreen"></div>
+      <div id="mainScreen">0</div>
       <div id="buttonsBox">
         <div id="C1">
-          <button id="C" class="optionButton">C</button>
-          <button id="7">7</button>
-          <button id="4">4</button>
-          <button id="1">1</button>
+          <button id="clear" class="optionButton">C</button>
+          <button data-number id="7">7</button>
+          <button data-number id="4">4</button>
+          <button data-number id="1">1</button>
           <button id="negToPos">+/-</button>
         </div>
         <div id="C2">
           <button id="delete" class="optionButton">
             <img src="backspace.svg" alt="Backspace Icon" />
           </button>
-
-          <button id="8">8</button>
-          <button id="5">5</button>
-          <button id="2">2</button>
+          <button data-number id="8">8</button>
+          <button data-number id="5">5</button>
+          <button data-number id="2">2</button>
           <button id="decimal">.</button>
         </div>
         <div id="C3">
           <button id="percentage" class="optionButton">%</button>
-          <button id="9">9</button>
-          <button id="6">6</button>
-          <button id="3">3</button>
-          <button id="0">0</button>
+          <button data-number id="9">9</button>
+          <button data-number id="6">6</button>
+          <button data-number id="3">3</button>
+          <button data-number id="0">0</button>
         </div>
         <div id="C4">
-          <button id="division" class="operationButton">/</button>
-          <button id="multiplication" class="operationButton">X</button>
-          <button id="subtraction" class="operationButton">+</button>
-          <button id="addition" class="operationButton">-</button>
+          <button data-operation id="division" class="operationButton">/</button>
+          <button
+            data-operation
+            id="multiplication"
+            class="operationButton"
+          >X</button>
+          <button data-operation id="addition" class="operationButton">+</button>
+          <button
+            data-operation
+            id="subtraction"
+            class="operationButton"
+          >-</button>
           <button id="equal" class="operationButton">=</button>
         </div>
       </div>
