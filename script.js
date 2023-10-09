@@ -1,6 +1,7 @@
-let currentNumber = "";
+let sign = "";
+let currentNumber = sign;
 let fullOperation = "";
-let result;
+let result = 0;
 let operation = "";
 let reset = false;
 
@@ -9,9 +10,8 @@ const mainScreen = document.getElementById("mainScreen");
 const buttonsBox = document.getElementById("buttonsBox");
 
 buttonsBox.addEventListener("click", function (event) {
-  if (reset) {
-    resetCalculator();
-  }
+  if (reset) resetCalculator();
+
   if (event.target.hasAttribute("data-number")) {
     currentNumber += event.target.textContent;
     mainScreen.textContent = currentNumber;
@@ -21,6 +21,7 @@ buttonsBox.addEventListener("click", function (event) {
   else if (event.target.id == "decimal") addDecimal();
   else if (event.target.id == "delete") backspace();
   else if (event.target.id == "equal") equal();
+  else if (event.target.id == "negToPos") changeSign();
 });
 
 function chosenOperation(target) {
@@ -63,7 +64,9 @@ function equal() {
   if (operation.length == 0) return;
   fullOperation += " " + currentNumber;
   result = calculate();
-  mainScreen.textContent = result.toFixed(5);
+
+  mainScreen.textContent =
+    Number(result) === result && result % 1 !== 0 ? result.toFixed(5) : result;
   smallScreen.textContent = fullOperation;
   reset = true;
 }
@@ -96,5 +99,18 @@ function resetCalculator() {
 function addDecimal() {
   if (currentNumber.includes(".")) return;
   currentNumber += Number(currentNumber) == 0 ? "0." : ".";
+  mainScreen.textContent = currentNumber;
+}
+function changeSign() {
+  if (currentNumber.length == 0) {
+    return;
+  }
+
+  if (currentNumber.includes("-")) {
+    currentNumber = currentNumber.replace("-", " ");
+  } else if (currentNumber.includes("-") == false) {
+    currentNumber = "-" + currentNumber;
+  }
+
   mainScreen.textContent = currentNumber;
 }
